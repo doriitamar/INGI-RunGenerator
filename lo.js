@@ -1,2 +1,0 @@
-let lol = require ('./index');
-console.log(lol.generateRun("cpp", [{"input": ["a"], "inputFiles": [{"name": "matritza.txt", "content":"marina\\nis\\na\\nmatriza\\n"}, {"name": "ilan.txt", "content": "mikluhi\nve\nday"}], "outputFiles": []}], "thecode"));
