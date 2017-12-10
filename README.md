@@ -3,6 +3,8 @@
 This module is a [run file](https://inginious.readthedocs.io/en/v0.4/teacher_doc/run_file.html) generator for [INGInious](https://github.com/UCL-INGI/INGInious).
 The original purpose was to enable anonymous code execution with integrating LMS, the execution is meant to be **agnostic** of the expected result, and thus, the generated script is returning a JSON contaning only dry details about the execution itself.
 
+It is recommended to use the generated scripts for tasks that are executed using the `simple_grader` INGInious plugin.
+
 This module is stiil in it's infancy so feel free to open issues with feature requests!
 
 # Install
