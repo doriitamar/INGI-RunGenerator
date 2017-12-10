@@ -1,5 +1,5 @@
 {
-  "name": "run-gen",
+  "name": "ingi-run-gen",
   "version": "1.0.6",
   "description": "Run file generator for INGInious",
   "main": "index.js",
@@ -9,6 +9,6 @@
   "keywords": [
     "INGInious"
   ],
-  "author": "Itamar Dori",
+  "author": "doriitamar",
   "license": "MIT"
 }
