@@ -1,6 +1,6 @@
 {
   "name": "ingi-run-gen",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Run file generator for INGInious",
   "main": "index.js",
   "scripts": {
