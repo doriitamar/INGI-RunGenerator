@@ -27,6 +27,9 @@ import RunGen from "run-gen";
 
 # Usage
 
+## Language support
+As of now, RunGen knows how to write scripts that exectue C++, Java and Python 2.
+
 ## Library
 
 ```js
