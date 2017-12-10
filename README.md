@@ -43,7 +43,7 @@ Example
 ```
 #### Output
 ```bash
-\#!/bin/bash
+#!/bin/bash
 
 
 # Parsing input for thecode
