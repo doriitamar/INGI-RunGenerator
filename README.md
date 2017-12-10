@@ -1,6 +1,9 @@
 # INGInious/RunGenerator
 
-Generating a run file script needed for inginious to process tasks.
+This module is a [run file](https://inginious.readthedocs.io/en/v0.4/teacher_doc/run_file.html) generator for [INGInious](https://github.com/UCL-INGI/INGInious).
+The original purpose was to enable anonymous code execution with integrating LMS, the execution is meant to be **agnostic** of the expected result, and thus, the generated script is returning a JSON contaning only dry details about the execution itself.
+
+This module is stiil in it's infancy so feel free to open issues with feature requests!
 
 # Install
 
@@ -24,7 +27,9 @@ import RunGen from "run-gen";
 
 ## Library
 
-### run-gen.generateRun(language: ("cpp"|"java"|"python"), cases: [{input: [], inputFiles:[] ,outputFiles:[]}...], problemId: String): string
+```js
+run-gen.generateRun(language: ("cpp"|"java"|"python"), cases: [{input: [String], inputFiles:[File] ,outputFiles:[File]}...], problemId: String): string
+```
 Generates a run file for a task that has one sub-problem and runs all of the `cases`.
 The script itself returns a JSON - an array of case results.
 
@@ -32,18 +37,18 @@ The script itself returns a JSON - an array of case results.
 Example
 
 ```js
-> RunGen.generateRun("cpp", [{"input": ["a"],"inputFiles": [], "outputFiles": []}], "thecode");
+> RunGen.generateRun("cpp", [{"input": ["a"],"inputFiles": [{"name": "ingi", "content": "is good"}], "outputFiles": []}], "thecode");
 ```
 #### Output
->>>
+```bash
 \#!/bin/bash
 
 
-\## Parsing input for thecode
+# Parsing input for thecode
 getinput "thecode" > student_code.cpp
 
 
-\## Compiling using cpp compiler
+# Compiling using cpp compiler
 g++ -o student_code.out student_code.cpp &> compiler
 
 
@@ -51,7 +56,7 @@ touch input
 feedback-msg -aem "["
 
 
-\## Case #0:
+# Case #0:
 echo "a" > input
 
 ./student_code.out < input > output 2>error
@@ -61,7 +66,7 @@ output=$(<output)
 compiler=$(<compiler)
 
 
-\##Escape characters
+#Escape characters
 
 echo $output | sed -e "s/[\]/\\\\\\\/g" > output
 
@@ -74,10 +79,10 @@ feedback-msg -aem "{\"status\": \"ok\",\"compiler\":\"$compiler\",\"error\": \"$
 feedback-msg -aem "]"
 
 
-\## Failing every automatic-generated test, since CodeIT handles validations
+# Failing every automatic-generated test, since CodeIT handles validations
 
 feedback-result failed
->>>
+```
 
 ---
 
