@@ -1,0 +1,15 @@
+V1.0.6:
+- Bug fix: The bug from V1.0.5 is now really fixed.
+
+V1.0.5:
+- Bug fix: read from files
+
+V1.0.4:
+- Bug fix: Ouput returns without newlines
+- NOTE: You might want to break any \n, \t and \r in your output to be able to parse the JSON.
+
+V1.0.3:
+- Run Generator now handles input files aswell as output files
+
+V1.0.2:
+- Added README with the api
